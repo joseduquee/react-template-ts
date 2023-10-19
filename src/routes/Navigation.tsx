@@ -1,4 +1,5 @@
 import logo from '../assets/react.svg';
+import { LazyPage1, LazyPage2, LazyPage3 } from '../features/lazyload/pages';
 import { schowActive } from '../helpers/showActive';
 import {
   createBrowserRouter,
@@ -20,26 +21,26 @@ export const Root = () => {
         <ul>
           <li>
             <NavLink
-              to="/home"
+              to="/lazy1"
               className={ schowActive }
             >
-              Home
+              Lazy1
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/about"
+              to="/lazy2"
               className={ schowActive }
             >
-              About
+              Lazy2
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/users"
+              to="/lazy3"
               className={ schowActive }
             >
-              Users
+              Lazy3
             </NavLink>
           </li>
         </ul>
@@ -57,22 +58,22 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/home",
-        element: <h1>Home</h1>,
+        path: "lazy1",
+        element: <LazyPage1 />,
       },
       {
-        path: "about",
-        element: <h1>About</h1>,
+        path: "lazy2",
+        element: <LazyPage2 />,
       },
       {
-        path: "users",
-        element: <h1>Users page</h1>,
+        path: "lazy3",
+        element: <LazyPage3 />,
       },
     ],
   },
   {
     path: "/*",
-    element: <Navigate to="/home" replace={true} />,
+    element: <Navigate to="/lazy1" replace={true} />,
   },
 ]);
 
