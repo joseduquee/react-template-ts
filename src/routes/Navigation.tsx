@@ -1,5 +1,6 @@
 import logo from '../assets/react.svg';
 import { schowActive } from '../helpers/showActive';
+import { ShoppingPage } from '../features/component-patterns/pages/ShoppingPage';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -20,10 +21,10 @@ export const Root = () => {
         <ul>
           <li>
             <NavLink
-              to="/home"
+              to="/"
               className={ schowActive }
             >
-              Home
+              Shooping
             </NavLink>
           </li>
           <li>
@@ -57,8 +58,8 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/home",
-        element: <h1>Home</h1>,
+        path: "/",
+        element: <ShoppingPage />,
       },
       {
         path: "about",
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <Navigate to="/home" replace={true} />,
+    element: <Navigate to="/" replace={true} />,
   },
 ]);
 
