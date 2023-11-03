@@ -1,5 +1,5 @@
 import { ProductCard as ProductCardHOC } from './ProductCard';
-// export { ProductCard } from './ProductCard';
+
 import { ProductButtons } from './ProductButtons';
 import { ProductImage } from './ProductImage';
 import { ProductTitle } from './ProductTitle';
